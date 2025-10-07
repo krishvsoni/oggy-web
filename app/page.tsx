@@ -1,6 +1,8 @@
 import { Header } from "@/components/header"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import Image from "next/image"
+import hero from "@/public/hero.svg"
 import {
   Zap,
   Code2,
@@ -15,7 +17,6 @@ import {
   Package,
 } from "lucide-react"
 import Link from "next/link"
-import { OggyLogo } from "@/components/oggy-logo" // Declare the OggyLogo variable
 
 export default function Home() {
   return (
@@ -24,13 +25,18 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 md:py-32">
+        
         <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="w-full max-w-md mx-auto mb-8">
+            <Image src={hero} alt="Hero Image" className="w-full h-auto" />
+          </div>
+
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-balance">
-            The Smart Command Line Interface for <span className="text-primary">Modern Developers</span>
+            Smarter Commits, Safer Code
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground text-balance max-w-2xl mx-auto leading-relaxed">
-            Streamline your development workflow with powerful automation tools and intelligent command execution
+            Securely contribute to your codebase with AI-powered code analysis and intelligent commit message suggestions.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -52,9 +58,11 @@ export default function Home() {
 
       {/* Features Section */}
       <section id="features" className="container mx-auto px-4 py-20">
+        
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Why Choose Oggy CLI?</h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          
           <Card className="p-6 space-y-4 bg-card hover:bg-card/80 transition-colors">
             <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
               <Zap className="w-6 h-6 text-primary" />
@@ -251,10 +259,17 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-border py-12">
+        
         <div className="container mx-auto px-4">
+          
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <OggyLogo />
+              
+              <Link href="/" className="hover:opacity-80 transition-opacity flex items-center">
+                <Image src="/navlogo.svg" alt="Oggy Logo" width={95} height={62} />
+              </Link>   
+              <div className="font-extrabold text-4xl"> oggy-cli 
+              </div>       
             </div>
 
             <div className="flex items-center gap-6">
@@ -270,10 +285,11 @@ export default function Home() {
                 GitHub
               </a>
             </div>
+            
           </div>
 
           <div className="mt-8 text-center text-sm text-muted-foreground">
-            <p>© 2025 Oggy CLI. Built for developers, by developers.</p>
+            <p>© {new Date().getFullYear()} Oggy CLI. Built for developers, by developer.</p>
           </div>
         </div>
       </footer>

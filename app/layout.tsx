@@ -4,12 +4,18 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import { Indie_Flower } from "next/font/google"
 import "./globals.css"
 
+const indieFlower = Indie_Flower({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-indie-flower",
+})
+
 export const metadata: Metadata = {
-  title: "Oggy CLI - The Smart Command Line Interface for Modern Developers",
-  description: "Streamline your development workflow with powerful automation tools and intelligent command execution",
-  generator: "v0.app",
+  title: "oggy",
+  description: "The Smart Command Line Interface for Modern Developers",
 }
 
 export default function RootLayout({
@@ -18,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" className={indieFlower.variable} suppressHydrationWarning>
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>

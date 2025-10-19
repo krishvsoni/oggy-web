@@ -1,6 +1,7 @@
 import { Header } from "@/components/header"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
 import { 
   Terminal, 
   Download, 
@@ -22,13 +23,19 @@ import Link from "next/link"
 
 export default function DocsPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background font-[family-name:var(--font-indie-flower)]">
       <Header />
 
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
-          {/* Header */}
           <div className="mb-12">
+            {/* <Image
+              src="maxresdefault.jpg"
+              alt="Documentation"
+              width={85}
+              height={75}
+              className="w-full h-auto rounded-lg"
+            /> */}
             <div className="flex items-center gap-3 mb-4">
               <h1 className="text-5xl font-bold">Documentation</h1>
               <Badge className="bg-green-600 text-white">
@@ -87,7 +94,7 @@ export default function DocsPage() {
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">Windows (PowerShell)</p>
                     <div className="bg-secondary p-3 rounded-md">
-                      <code className="text-xs font-mono break-all">
+                      <code className="text-xs font-mono break-all" style={{ fontFamily: "monospace" }}>
                         iwr "...Install-Oggy.ps1" | iex
                       </code>
                     </div>
@@ -95,7 +102,7 @@ export default function DocsPage() {
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">Linux/macOS</p>
                     <div className="bg-secondary p-3 rounded-md">
-                      <code className="text-xs font-mono">
+                      <code className="text-xs font-mono" style={{ fontFamily: "monospace" }}>
                         curl -sSL install.sh | bash
                       </code>
                     </div>
@@ -109,13 +116,13 @@ export default function DocsPage() {
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">Interactive setup</p>
                     <div className="bg-secondary p-3 rounded-md">
-                      <code className="text-sm font-mono">oggy setup</code>
+                      <code className="text-sm font-mono" style={{ fontFamily: "monospace" }}>oggy setup</code>
                     </div>
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">Auto-detect project</p>
                     <div className="bg-secondary p-3 rounded-md">
-                      <code className="text-sm font-mono">oggy init</code>
+                      <code className="text-sm font-mono" style={{ fontFamily: "monospace" }}>oggy init</code>
                     </div>
                   </div>
                 </div>
@@ -143,42 +150,42 @@ export default function DocsPage() {
                 <div className="space-y-6">
                   <div>
                     <div className="border-l-4 border-primary pl-4 mb-3">
-                      <code className="text-primary font-mono font-bold text-lg">oggy analyze</code>
+                      <code className="text-primary font-mono font-bold text-lg" style={{ fontFamily: "monospace" }}>oggy analyze</code>
                       <p className="text-muted-foreground mt-1">Standard commit-based analysis</p>
                     </div>
                   </div>
 
                   <div>
                     <div className="border-l-4 border-blue-500 pl-4 mb-3">
-                      <code className="text-blue-600 font-mono font-bold text-lg">oggy analyze --whole-codebase</code>
+                      <code className="text-blue-600 font-mono font-bold text-lg" style={{ fontFamily: "monospace" }}>oggy analyze --whole-codebase</code>
                       <p className="text-muted-foreground mt-1">Analyze entire repository structure and all files</p>
                     </div>
                   </div>
 
                   <div>
                     <div className="border-l-4 border-green-500 pl-4 mb-3">
-                      <code className="text-green-600 font-mono font-bold text-lg">oggy analyze --git-url https://github.com/user/repo.git</code>
+                      <code className="text-green-600 font-mono font-bold text-lg" style={{ fontFamily: "monospace" }}>oggy analyze --git-url https://github.com/user/repo.git</code>
                       <p className="text-muted-foreground mt-1">Analyze remote repositories without cloning</p>
                     </div>
                   </div>
 
                   <div>
                     <div className="border-l-4 border-red-500 pl-4 mb-3">
-                      <code className="text-red-600 font-mono font-bold text-lg">oggy analyze --production</code>
+                      <code className="text-red-600 font-mono font-bold text-lg" style={{ fontFamily: "monospace" }}>oggy analyze --production</code>
                       <p className="text-muted-foreground mt-1">Enterprise security and production readiness checks</p>
                     </div>
                   </div>
 
                   <div>
                     <div className="border-l-4 border-purple-500 pl-4 mb-3">
-                      <code className="text-purple-600 font-mono font-bold text-lg">oggy analyze --e2e-tests</code>
+                      <code className="text-purple-600 font-mono font-bold text-lg" style={{ fontFamily: "monospace" }}>oggy analyze --e2e-tests</code>
                       <p className="text-muted-foreground mt-1">Comprehensive end-to-end testing analysis</p>
                     </div>
                   </div>
 
                   <div>
                     <div className="border-l-4 border-orange-500 pl-4 mb-3">
-                      <code className="text-orange-600 font-mono font-bold text-lg">oggy analyze --output report.md</code>
+                      <code className="text-orange-600 font-mono font-bold text-lg" style={{ fontFamily: "monospace" }}>oggy analyze --output report.md</code>
                       <p className="text-muted-foreground mt-1">Export detailed analysis reports</p>
                     </div>
                   </div>
@@ -195,28 +202,28 @@ export default function DocsPage() {
                 <div className="space-y-6">
                   <div>
                     <div className="border-l-4 border-primary pl-4 mb-3">
-                      <code className="text-primary font-mono font-bold text-lg">oggy init</code>
+                      <code className="text-primary font-mono font-bold text-lg" style={{ fontFamily: "monospace" }}>oggy init</code>
                       <p className="text-muted-foreground mt-1">Auto-detect project type and generate optimal configuration</p>
                     </div>
                   </div>
 
                   <div>
                     <div className="border-l-4 border-blue-500 pl-4 mb-3">
-                      <code className="text-blue-600 font-mono font-bold text-lg">oggy init --production</code>
+                      <code className="text-blue-600 font-mono font-bold text-lg" style={{ fontFamily: "monospace" }}>oggy init --production</code>
                       <p className="text-muted-foreground mt-1">Production-optimized configuration with security focus</p>
                     </div>
                   </div>
 
                   <div>
                     <div className="border-l-4 border-green-500 pl-4 mb-3">
-                      <code className="text-green-600 font-mono font-bold text-lg">oggy init --language typescript --framework react</code>
+                      <code className="text-green-600 font-mono font-bold text-lg" style={{ fontFamily: "monospace" }}>oggy init --language typescript --framework react</code>
                       <p className="text-muted-foreground mt-1">Specific language and framework configuration</p>
                     </div>
                   </div>
 
                   <div>
                     <div className="border-l-4 border-purple-500 pl-4 mb-3">
-                      <code className="text-purple-600 font-mono font-bold text-lg">oggy setup</code>
+                      <code className="text-purple-600 font-mono font-bold text-lg" style={{ fontFamily: "monospace" }}>oggy setup</code>
                       <p className="text-muted-foreground mt-1">Interactive configuration wizard</p>
                     </div>
                   </div>
@@ -398,11 +405,11 @@ export default function DocsPage() {
               <div>
                 <h3 className="text-xl font-bold mb-3">Environment Setup</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  Oggy v2.0 uses a <code className="text-primary font-mono">.env</code> file for API configuration:
+                  Oggy v2.0 uses a <code className="text-primary font-mono" style={{ fontFamily: "monospace" }}>.env</code> file for API configuration:
                 </p>
 
                 <div className="bg-secondary p-4 rounded-lg border border-border">
-                  <pre className="text-sm font-mono text-foreground overflow-x-auto">
+                  <pre className="text-sm font-mono text-foreground overflow-x-auto" style={{ fontFamily: "monospace" }}>
 {`# .env file
 GROQ_API_KEY=your_groq_api_key_here
 
@@ -418,11 +425,11 @@ OGGY_OUTPUT_DIR=./oggy-reports`}
               <div>
                 <h3 className="text-xl font-bold mb-3">Project Configuration</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  Auto-generated <code className="text-primary font-mono">oggy.config.yaml</code> based on your project:
+                  Auto-generated <code className="text-primary font-mono" style={{ fontFamily: "monospace" }}>oggy.config.yaml</code> based on your project:
                 </p>
 
                 <div className="bg-secondary p-4 rounded-lg border border-border">
-                  <pre className="text-sm font-mono text-foreground overflow-x-auto">
+                  <pre className="text-sm font-mono text-foreground overflow-x-auto" style={{ fontFamily: "monospace" }}>
 {`# oggy.config.yaml
 project:
   name: "my-awesome-project"
@@ -454,11 +461,11 @@ output:
               <div>
                 <h3 className="text-xl font-bold mb-3">Ignore Patterns</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  Use <code className="text-primary font-mono">.oggyignore</code> to exclude files from analysis:
+                  Use <code className="text-primary font-mono" style={{ fontFamily: "monospace" }}>.oggyignore</code> to exclude files from analysis:
                 </p>
 
                 <div className="bg-secondary p-4 rounded-lg border border-border">
-                  <pre className="text-sm font-mono text-foreground overflow-x-auto">
+                  <pre className="text-sm font-mono text-foreground overflow-x-auto" style={{ fontFamily: "monospace" }}>
 {`# .oggyignore
 node_modules/
 dist/
@@ -490,7 +497,7 @@ coverage/
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">PowerShell (Recommended)</p>
                     <div className="bg-secondary p-3 rounded-md">
-                      <code className="text-xs font-mono break-all">
+                      <code className="text-xs font-mono break-all" style={{ fontFamily: "monospace" }}>
                         iwr "...Install-Oggy.ps1" | iex
                       </code>
                     </div>
@@ -508,7 +515,7 @@ coverage/
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">Terminal</p>
                     <div className="bg-secondary p-3 rounded-md">
-                      <code className="text-xs font-mono">
+                      <code className="text-xs font-mono" style={{ fontFamily: "monospace" }}>
                         curl -sSL install.sh | bash
                       </code>
                     </div>
@@ -532,7 +539,7 @@ coverage/
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">Terminal</p>
                     <div className="bg-secondary p-3 rounded-md">
-                      <code className="text-xs font-mono">
+                      <code className="text-xs font-mono" style={{ fontFamily: "monospace" }}>
                         curl -sSL install.sh | bash
                       </code>
                     </div>

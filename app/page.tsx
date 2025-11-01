@@ -1,6 +1,7 @@
 'use client';
 
 import { Header } from "@/components/header"
+import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -84,10 +85,25 @@ export default function Home() {
 
         <Card className="max-w-6xl mx-auto p-4 md:p-6 lg:p-8 bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/20">
           <div className="text-center space-y-3 md:space-y-4">
-            <Badge className="bg-primary text-primary-foreground text-xs md:text-sm">
-              What's New in v2.0
-              
-            </Badge>
+            <div className="flex items-center justify-center gap-2 -translate-x-2">
+              <Badge
+                title="Production Failure"
+                className="bg-red-600 text-white text-xs md:text-sm flex items-center gap-2 px-3 py-1.5"
+              >
+                <Shield className="w-4 h-4 -ml-0.5" />
+                <span className="font-semibold">Production Failure</span>
+              </Badge>
+
+              <Badge
+                title="PR Fail"
+                className="bg-amber-600 text-white text-xs md:text-sm flex items-center gap-2 px-3 py-1.5"
+              >
+                <GitBranch className="w-4 h-4 -ml-0.5" />
+                <span className="font-semibold">PR Fail</span>
+              </Badge>
+
+             
+            </div>
                     <Image 
           src="/oggy-2.png" 
           alt="What's New in v2.0" 
@@ -95,7 +111,7 @@ export default function Home() {
           height={400} 
           className="mx-auto mb-4 md:mb-6" 
         />
-            <h2 className="text-2xl md:text-3xl font-bold px-2">Major Update: From Commit Tool to Enterprise Platform</h2>
+            <h2 className="text-2xl md:text-3xl font-bold px-2">Oggy prevents vulnerable pushes to your repository.</h2>
             <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
               Oggy  has evolved into a comprehensive code analysis platform with codebase-wide analysis, 
               remote repository scanning, production readiness checks.
@@ -122,7 +138,6 @@ export default function Home() {
         </Card>
       </section>
 
-      {/* Enhanced Features Section */}
       <section id="features" className="container mx-auto px-4 py-12 md:py-20">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 md:mb-16 px-2">Enterprise-Grade Code Analysis</h2>
 
@@ -505,46 +520,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-border py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <Link href="/" className="hover:opacity-80 transition-opacity flex items-center">
-                <Image src="oggy-and-the-cockroaches-oggy-fly-swatter-custom-cursor.png" alt="Oggy Logo" width={125} height={82} />
-              </Link>   
-              <div className="font-extrabold text-4xl"> oggy-cli 
-                <Badge className="ml-2 text-xs">v2.0</Badge>
-              </div>       
-            </div>
-
-            <div className="flex items-center gap-6">
-              <Link href="/docs" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Documentation
-              </Link>
-              <a
-                href="https://github.com/krishvsoni/oggy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://github.com/krishvsoni/oggy/releases"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Releases
-              </a>
-            </div>
-          </div>
-
-          <div className="mt-8 text-center font-bold text-sm text-muted-foreground">
-            <p>© 2025 Oggy CLI. Enterprise-grade code analysis for modern development teams.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

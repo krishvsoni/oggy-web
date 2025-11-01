@@ -2,6 +2,8 @@ import { Header } from "@/components/header"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
+import Footer from "@/components/footer"
+
 import { 
   Terminal, 
   Download, 
@@ -47,7 +49,6 @@ export default function DocsPage() {
             </p>
           </div>
 
-          {/* What's New */}
           <section className="mb-16">
             <Card className="p-8 bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/20">
               <div className="flex items-center gap-3 mb-4">
@@ -78,7 +79,6 @@ export default function DocsPage() {
             </Card>
           </section>
 
-          {/* Quick Start */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -607,6 +607,9 @@ coverage/
           </section>
         </div>
       </div>
+                <Footer />
+
     </div>
+
   )
 }
